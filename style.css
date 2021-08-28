@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    /* (weights 400, 600)*/
+}
+:root{
+    --primary-color-moderate-violet: hsl(263, 55%, 52%);
+    --primary-color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --primary-color-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --primary-color-white: hsl(0, 0%, 100%);
+
+    --neutral-color-light-gray: hsl(0, 0%, 81%);
+    --neutral-color-light-grayish-blue: hsl(210, 46%, 95%);
+
+    /*1. "Verified Graduate" has the same color as the person's name with 50% opacity
+    2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity*/
+
+}
+html{
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+    background-color: var(--neutral-color-light-grayish-blue) ;
+}
+img{
+    border-radius: 50%;
+    width: 50px;
+
+}
+.quote{
+    width: 20%;
+    border-radius: 0;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    padding: 2em 2.5em;
+    border-radius: 8px;
+    margin: 2em 0;
+    filter: drop-shadow(0 0 0.70em hsla(210, 3%, 39%, 0.452) )
+}
+.img-name{
+    display: flex;
+    align-items: center;
+
+}
+.name{
+    margin-left: 1.5em;
+}
+
+h1{
+    font-size: 13px;
+    font-weight: 600;
+}
+h2{
+    font-size: 13px;
+    color: hsl(0, 0%, 100%, 50%);
+    font-weight: 400;
+}
+h3{
+    margin: 1em 0;
+    line-height: 1.3em;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p{
+    line-height: 1.5em;
+    font-size: 13px;
+}
+.one{
+    background-color: var(--primary-color-moderate-violet);
+    color: white;
+    background-image: url(/images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    /*background-position: top right;*/
+    background-position: 90% 0%;
+}
+
+.one p{
+    color: hsl(0, 0%, 100%, 70%);
+}
+.one img{
+    border: 2px solid hsl(0, 0%, 100%, 50%);
+}
+
+.two{
+    background-color: var(--primary-color-very-dark-grayish-blue);
+}
+.two h1, .two h3{
+    color: white;
+}
+.two  p{
+    color: hsl(0, 0%, 100%, 75%);
+}
+
+.three{
+    background-color: white;
+}
+.three h1, .three h3{
+    color: var(--primary-color-very-dark-blackish-blue);
+}
+.three h2{
+    color: hsl(219, 29%, 14%, 50%);
+}
+
+.three p{
+    color: hsl(219, 29%, 14%, 70%);
+}
+
+.four{
+    background-color: var(--primary-color-very-dark-blackish-blue);
+}
+
+.four h1, .four h3{
+    color: white;
+}
+.four h2{
+    color: hsl(0, 0%, 100%, 50%);
+}
+.four p{
+    color: hsl(0, 0%, 100%, 70%);
+}
+
+.four img{
+    border: 2px solid hsl(263, 55%, 52%);
+}
+.five{
+    background-color: white;
+}
+
+.five h1, .five h3{
+    color: var(--primary-color-very-dark-blackish-blue)
+}
+.five h2{
+    color: hsl(219, 29%, 14%, 50%);
+}
+.five p{
+    color: hsl(219, 29%, 14%, 70%);
+}
+
+@media screen and (min-width: 992px){
+    html{
+        min-height: 100vh;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+        margin-top: 5em;
+        
+
+    }
+    .content{
+        margin: 0;
+    }
+    .one{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    .two{
+        grid-row: 1/2;
+        grid-column: 3/4;
+        
+    }
+
+    .five{
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+
+    .four{
+        grid-row: 2/3;
+        grid-column: 2/4;
+
+    }
+
+    .three{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .attribution{
+        position: absolute;
+        right: 45%;
+    }
+}
